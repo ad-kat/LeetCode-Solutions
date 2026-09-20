@@ -3,17 +3,16 @@ class Solution:
         if not matrix or not matrix[0]:
             return []
             
-        # m = rows, n = columns
         m, n = len(matrix), len(matrix[0])
         
-        # Correctly assign boundaries
-        l, r = 0, n - 1  # Column boundaries
-        t, b = 0, m - 1  # Row boundaries
+    
+        l, r = 0, n - 1  
+        t, b = 0, m - 1  
         
         ans = []
         
         while l <= r and t <= b:
-            # 1. Move Right across the top row
+            
             for j in range(l, r + 1):
                 ans.append(matrix[t][j])
             t += 1 # Shrink top boundary
